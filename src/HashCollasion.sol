@@ -10,14 +10,7 @@ contract HashCollisionExample {
         string memory nonce, //normally uint, but we use string for demonstration purposes
         string memory deadline //normally uint, but we use string for demonstration purposes
     ) public pure returns (bytes memory) {
-        bytes memory data = abi.encodePacked(
-            permit_type_hash,
-            _owner,
-            _spender,
-            value,
-            nonce,
-            deadline
-        );
+        bytes memory data = abi.encodePacked(permit_type_hash, _owner, _spender, value, nonce, deadline);
         return data;
     }
 }

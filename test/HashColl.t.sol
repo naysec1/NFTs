@@ -18,14 +18,7 @@ contract HashCollisionExampleTest is Test {
         string memory value = "10000";
         string memory nonce = "0";
         string memory deadline = "1500";
-        bytes memory encodedPacked = hashCollision.permit(
-            permit_type_hash,
-            _owner,
-            _spender,
-            value,
-            nonce,
-            deadline
-        );
+        bytes memory encodedPacked = hashCollision.permit(permit_type_hash, _owner, _spender, value, nonce, deadline);
         bytes32 hashPacked = keccak256(encodedPacked);
         emit log_bytes32(hashPacked);
     }
@@ -37,14 +30,7 @@ contract HashCollisionExampleTest is Test {
         string memory value = "100000"; // Adding one extra zero
         string memory nonce = "1"; // Incremented nonce
         string memory deadline = "500"; // Reduced deadline
-        bytes memory encodedPacked = hashCollision.permit(
-            permit_type_hash,
-            _owner,
-            _spender,
-            value,
-            nonce,
-            deadline
-        );
+        bytes memory encodedPacked = hashCollision.permit(permit_type_hash, _owner, _spender, value, nonce, deadline);
         bytes32 hashPacked = keccak256(encodedPacked);
         emit log_bytes32(hashPacked);
     }

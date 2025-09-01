@@ -9,9 +9,7 @@ contract DoggyNFT is ERC721, Ownable {
     uint256 public constant MAX_SUPPLY = 10000;
     string private baseTokenURI;
 
-    constructor(
-        string memory _baseTokenURI
-    ) ERC721("DoggyNFT", "DOGY") Ownable(msg.sender) {
+    constructor(string memory _baseTokenURI) ERC721("DoggyNFT", "DOGY") Ownable(msg.sender) {
         baseTokenURI = _baseTokenURI;
     }
 
